@@ -1,4 +1,4 @@
-name        'golang'
+name        'elithrar-golang'
 version     '0.0.1'
 source      'git://github.com/elithrar/puppet-golang-backports.git'
 author      'Matt Silverlock'
