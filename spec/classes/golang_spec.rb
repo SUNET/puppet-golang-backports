@@ -6,7 +6,6 @@ describe 'golang', :type => :class do
   context 'with no parameters' do
     it { should include_class('apt') }
     it { should contain_package('new-golang').with_name('golang').with_ensure('present') }
-    it { should contain_package('system-golang').with_name('golang').with_ensure('absent') }
     it { should contain_apt__ppa('ppa:james-page/golang-backports') }
   end
 
