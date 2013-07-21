@@ -1,5 +1,5 @@
 name        'elithrar-golang'
-version     '0.0.2'
+version     '0.0.3'
 source      'git://github.com/elithrar/puppet-golang-backports.git'
 author      'Matt Silverlock'
 summary     'Module for installing go from unofficial backports PPA'
