@@ -1,9 +1,9 @@
-name        'golang-backports'
+name        'golang'
 version     '0.0.1'
 source      'git://github.com/elithrar/puppet-golang-backports.git'
 author      'Matt Silverlock'
 summary     'Module for installing go from unofficial backports PPA'
-description 'Install the latest version of Go on older versions of Ubuntu/Debian'
+description 'Install the latest version of Go on older versions of Ubuntu'
 license     'BSD New License'
 
 dependency  'puppetlabs/apt', '>= 1.1.0'
