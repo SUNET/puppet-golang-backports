@@ -21,7 +21,6 @@ class golang(
 
   apt::ppa { 'ppa:james-page/golang-backports':
     before => Package["new-golang"],
-    require => Exec["apt_update"],
   }
 
   package { 'new-golang':
