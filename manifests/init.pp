@@ -1,24 +1,21 @@
 # == Class: golang
 #
 # Module to install an up-to-date version of Go from the
-# official PPA. The use of the PPA means this only works
-# on Ubuntu.
+# unofficial golang-backports PPA. The use of the PPA means
+# this only works on Ubuntu.
 #
 # === Parameters
-# [*version*]
-#   The package version to install, passed to ensure.
-#   Defaults to present.
-#
-# [*package_name*]
-#   Which package you want. Valid values are golang-weekly,
-#   golang-tip and golang-stable. Defaults to golang-stable.
-#
+# 
+# There are no parameters to pass to the module at the moment, as the PPA
+# has not established a clear versioning scheme yet.
+# 
+
 class golang(
   $version = 'present',
-  $package_name = 'golang-stable',
+  $package_name = 'golang',
 ) {
   include apt
-  validate_re($package_name, '^golang-(stable|weekly|tip)$')
+  validate_re($package_name, '^golang$')
   validate_string($version)
   validate_re($::osfamily, '^Debian$', 'This module uses PPA repos and only works with Debian based distros')
 
@@ -27,13 +24,13 @@ class golang(
     name   => 'golang',
   }
 
-  apt::ppa { 'ppa:gophers/go':
+  apt::ppa { 'ppa:james-page/golang-backports':
     require => Package['system-golang'],
   }
 
   package { 'new-golang':
     ensure  => $version,
     name    => $package_name,
-    require => Apt::Ppa['ppa:gophers/go'],
+    require => Apt::Ppa['ppa:james-page/golang-backports'],
   }
 }

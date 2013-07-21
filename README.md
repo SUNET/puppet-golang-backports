@@ -1,10 +1,6 @@
-Puppet module for installing the Go from the official PPA noted
-on in the [Golang docs](https://code.google.com/p/go-wiki/wiki/Ubuntu).
-This module is also available on the [Puppet
-Forge](https://forge.puppetlabs.com/garethr/golang)
+Puppet module for installing the Go from the unofficial [golang-backports](https://launchpad.net/~james-page/+archive/golang-backports) PPA.
 
-[![Build
-Status](https://secure.travis-ci.org/garethr/garethr-golang.png)](http://travis-ci.org/garethr/garethr-golang)
+This will allow later versions of Go to be installed on older versions (>= 12.04) of Ubuntu, many of which currently are locked to v1.0.3.
 
 ## Usage
 
@@ -12,5 +8,10 @@ The module includes a single class:
 
     include 'golang'
 
-By default this sets up the PPA and installs the golang-stable package.
-See the code for ways to get golang-weekly or golang-tip.
+This will (currently) install the latest (v1.1.1 as of this writing) version of Go. Once the PPA adds future releases of Go, additional parameters will allow the installation of specific versions.
+
+Note that this PPA will allow newer versions of Go to be installed from the official Ubuntu repositories.
+
+# License
+
+New BSD license. Code forked from [garethr/garethr-golang](https://github.com/garethr/garethr-golang).

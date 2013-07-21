@@ -5,19 +5,9 @@ describe 'golang', :type => :class do
 
   context 'with no parameters' do
     it { should include_class('apt') }
-    it { should contain_package('new-golang').with_name('golang-stable').with_ensure('present') }
+    it { should contain_package('new-golang').with_name('golang').with_ensure('present') }
     it { should contain_package('system-golang').with_name('golang').with_ensure('absent') }
-    it { should contain_apt__ppa('ppa:gophers/go') }
-  end
-
-  context 'with a custom package name' do
-    let(:params) { {'package_name' => 'golang-weekly' } }
-    it { should contain_package('new-golang').with_name('golang-weekly').with_ensure('present') }
-  end
-
-  context 'with another custom package name' do
-    let(:params) { {'package_name' => 'golang-tip' } }
-    it { should contain_package('new-golang').with_name('golang-tip').with_ensure('present') }
+    it { should contain_apt__ppa('ppa:james-page/golang-backports') }
   end
 
   context 'with a custom version' do
