@@ -20,7 +20,7 @@ class golang(
   validate_re($::osfamily, '^Debian$', 'This module uses PPA repos and only works with Debian based distros')
 
   apt::ppa { 'ppa:james-page/golang-backports':
-    require => Package['system-golang'],
+    before => Package["new-golang"],
   }
 
   package { 'new-golang':
