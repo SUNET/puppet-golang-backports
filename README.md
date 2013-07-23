@@ -2,6 +2,12 @@ Puppet module for installing the Go from the unofficial [golang-backports](https
 
 This will allow later versions of Go to be installed on older versions (>= 12.04) of Ubuntu, many of which currently are locked to v1.0.3.
 
+## Installation
+
+Clone this repo into your modules folder, or install it from [Puppet Forge](http://forge.puppetlabs.com/elithrar/golang):
+
+`puppet module install elithrar/golang`
+
 ## Usage
 
 The module includes a single class:
