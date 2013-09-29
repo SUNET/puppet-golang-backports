@@ -26,6 +26,6 @@ class golang(
   package { 'new-golang':
     ensure  => $version,
     name    => $package_name,
-    require => Apt::Ppa['ppa:james-page/golang-backports'],
+    require => Apt::Ppa['ppa:juju/golang'],
   }
 }
