@@ -1,4 +1,4 @@
-Puppet module for installing the Go from the unofficial [golang-backports](https://launchpad.net/~james-page/+archive/golang-backports) PPA.
+Puppet module for installing the Go from the unofficial [Juju](https://launchpad.net/~juju/+archive/golang) PPA.
 
 This will allow later versions of Go to be installed on older versions (>= 12.04) of Ubuntu, many of which currently are locked to v1.0.3.
 
